@@ -13,28 +13,29 @@
 
 ## Installation
 
-1.  **Clone all required packages into your workspace:**
+1.  **Clone the ROS 2 Humble controller into your workspace:**
     ```bash
-    # (Assuming your workspace is at ~/ros2_ws/src)
-    cd ~/ros2_ws/src
-    # git clone ... (clone this package and all other allegro_hand ROS 2 packages)
+    source /opt/ros/humble/setup.bash
+    mkdir -p ~/allegro_hand_v4_ws/src
+    cd ~/allegro_hand_v4_ws/src
+    git clone --branch humble https://github.com/Wonikrobotics-git/allegro_hand_ros2_v4.git
     ```
 
 2.  **Install dependencies:**
     ```bash
-    cd ~/ros2_ws
+    cd ~/allegro_hand_v4_ws
     rosdep install --from-paths src --ignore-src -r -y
     ```
 
 3.  **Build the packages:**
     ```bash
-    cd ~/ros2_ws
-    colcon build
+    cd ~/allegro_hand_v4_ws
+    colcon build --symlink-install
     ```
 
 4.  **Source the environment:**
     ```bash
-    source ~/ros2_ws/install/setup.bash
+    source ~/allegro_hand_v4_ws/install/setup.bash
     ```
 
 ## Gazebo Harmonic Installation
